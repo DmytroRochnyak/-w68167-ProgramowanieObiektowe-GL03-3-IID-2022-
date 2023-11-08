@@ -1,3 +1,5 @@
+using System;
+
 public class Sumator
 {
     private int[] Liczby;
@@ -12,7 +14,7 @@ public class Sumator
     public int Suma()
     {
         int suma = 0;
-        for (int liczba : Liczby)
+        foreach (int liczba in Liczby)
         {
             suma += liczba;
         }
@@ -23,7 +25,7 @@ public class Sumator
     public int SumaPodziel3()
     {
         int suma = 0;
-        for (int liczba : Liczby)
+        foreach (int liczba in Liczby)
         {
             if (liczba % 3 == 0)
             {
@@ -36,17 +38,17 @@ public class Sumator
     // Metoda zwracaj¹ca liczbê elementów w tablicy
     public int IleElementów()
     {
-        return Liczby.length;
+        return Liczby.Length;
     }
 
     // Metoda wypisuj¹ca wszystkie elementy tablicy
     public void WypiszElementy()
     {
-        for (int liczba : Liczby)
+        foreach (int liczba in Liczby)
         {
-            System.out.print(liczba + " ");
+            Console.Write(liczba + " ");
         }
-        System.out.println();
+        Console.WriteLine();
     }
 
     // Metoda wypisuj¹ca elementy o indeksach >= lowIndex oraz <= highIndex
@@ -56,31 +58,31 @@ public class Sumator
         {
             lowIndex = 0;
         }
-        if (highIndex >= Liczby.length)
+        if (highIndex >= Liczby.Length)
         {
-            highIndex = Liczby.length - 1;
+            highIndex = Liczby.Length - 1;
         }
 
         for (int i = lowIndex; i <= highIndex; i++)
         {
-            System.out.print(Liczby[i] + " ");
+            Console.Write(Liczby[i] + " ");
         }
-        System.out.println();
+        Console.WriteLine();
     }
 
-    public static void main(String[] args)
+    public static void Main()
     {
         int[] liczby = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
         Sumator sumator = new Sumator(liczby);
 
-        System.out.println("Suma wszystkich liczb: " + sumator.Suma());
-        System.out.println("Suma liczb podzielnych przez 3: " + sumator.SumaPodziel3());
-        System.out.println("Liczba elementów w tablicy: " + sumator.IleElementów());
+        Console.WriteLine("Suma wszystkich liczb: " + sumator.Suma());
+        Console.WriteLine("Suma liczb podzielnych przez 3: " + sumator.SumaPodziel3());
+        Console.WriteLine("Liczba elementów w tablicy: " + sumator.IleElementów());
 
-        System.out.println("Wszystkie elementy tablicy:");
+        Console.WriteLine("Wszystkie elementy tablicy:");
         sumator.WypiszElementy();
 
-        System.out.println("Elementy o indeksach 2-6:");
+        Console.WriteLine("Elementy o indeksach 2-6:");
         sumator.WypiszElementyWZakresie(2, 6);
     }
 }

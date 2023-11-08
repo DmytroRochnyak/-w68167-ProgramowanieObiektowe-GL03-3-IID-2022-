@@ -1,4 +1,5 @@
 using System;
+
 public class Licz
 {
     private int wartoœæ;
@@ -24,10 +25,10 @@ public class Licz
     // Metoda wypisuj¹ca stan obiektu
     public void WypiszStan()
     {
-        System.out.println("Wartoœæ: " + wartoœæ);
+        Console.WriteLine("Wartoœæ: " + wartoœæ);
     }
 
-    public static void main(String[] args)
+    public static void Main()
     {
         Licz liczba = new Licz(10); // Tworzenie obiektu z pocz¹tkow¹ wartoœci¹ 10
         liczba.WypiszStan();       // Wyœwietlenie pocz¹tkowego stanu
